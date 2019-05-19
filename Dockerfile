@@ -20,4 +20,5 @@ RUN cp $GOPATH/src/github.com/gopherdata/gophernotes/kernel/* ~/.local/share/jup
 RUN pip install --upgrade pip && \
      pip install git+git://github.com/xapharius/cppmagic.git
 
-RUN pip install globus_sdk graphviz
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install -r /tmp/requirements.txt
